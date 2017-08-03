@@ -7,8 +7,8 @@ python:
 install: true
 script:
 - ./docs/scripts/docker-docs.sh \
-  - pip install --user ./ \
-  - make -C docs/ html
+  pip install --user ./ \
+  make -C docs/ html
 deploy:
 - provider: script
   skip_cleanup: true
