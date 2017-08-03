@@ -16,6 +16,7 @@
 import os
 import sys
 import f5_heat
+import f5_sphinx_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -128,7 +129,9 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'f5_sphinx_theme'
+html_theme_path = f5_sphinx_theme.get_html_theme_path()
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -173,7 +176,7 @@ html_static_path = ['_static']
 # html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-# html_sidebars = {}
+html_sidebars = {'**': ['searchbox.html', 'localtoc.html', 'globaltoc.html']}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -311,14 +314,3 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 # texinfo_no_detailmenu = False
 
-
-# Map to other F5 projects
-intersphinx_mapping = {'heat': (
-    'http://f5-openstack-heat.readthedocs.io/en/kilo', None),
-    'lbaasv1': (
-    'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
-    #'lbaasv2': (
-    #'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/liberty/', None),
-    'f5sdk': (
-    'http://f5-sdk.readthedocs.io/en/latest/', None),
-    }
