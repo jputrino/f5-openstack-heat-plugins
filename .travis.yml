@@ -6,9 +6,7 @@ python:
 - '2.7'
 install: true
 script:
-- ./docs/scripts/docker-docs.sh \
-  pip install --user ./ \
-  make -C docs/ html
+- ./docs/scripts/docker-docs.sh ./docs/scripts/build-docs.sh
 deploy:
 - provider: script
   skip_cleanup: true
